@@ -28,21 +28,22 @@
 
    ```
    PORT=8000
-   SQL_USER=sa
-   SQL_PASSWORD=admin
-   SQL_SERVER=SAMAR\SQLEXPRESS
-   SQL_DATABASE=task
-   JWT_SECRET_KEY=JWT_SECRET
+   SQL_USER=<your_sql_user>
+   SQL_PASSWORD=<your_sql_password>
+   SQL_SERVER=<your_sql_server>
+   SQL_DATABASE=<your_sql_database>
+   JWT_SECRET_KEY=<your_jwt_secret_key>
 
-   apiKey=AIzaSyBrTZoVk9twsQATVOwFcJZwOYpzs5QxdtE
-   authDomain=fir-upload-47e23.firebaseapp.com
-   projectId=fir-upload-47e23
-   storageBucket=fir-upload-47e23.appspot.com
-   messagingSenderId=17198946976
-   appId=1:317198946976:web:511f1ee0e3bedfca5cefc5
-   FIREBASE_USER=engsamar105@gmail.com
-   FIREBASE_AUTH=samar1234
-   STRIPE_SECRET_KEY=sk_test_51OibQFKccMjnDABQJumUnZn9sSdvRXIVxMmTyRPxAco1ri7mUj27DQ8pPnv0k5iv0xCKeyVDrdhlPJ3ceTDk1n50003TBE8t2W
+   apiKey=<your_firebase_apiKey>
+   authDomain=<your_firebase_authDomain>
+   projectId=<your_firebase_projectId>
+   storageBucket=<your_firebase_storageBucket>
+   messagingSenderId=<your_firebase_messagingSenderId>
+   appId=<your_firebase_appId>
+   FIREBASE_USER=<your_firebase_user>
+   FIREBASE_AUTH=<your_firebase_auth>
+   STRIPE_SECRET_KEY=<your_stripe_secret_key>
+
    ```
 
    **Note**: Replace `your_sql_user`, `your_sql_password`, `your_sql_server`, and `your_sql_database` with your actual SQL server configuration details.
@@ -411,10 +412,10 @@
     ```
   - **Server Error (500)**:
     `json
-    {
-      "message": "Internal server error message"
-    }
-    `
+{
+  "message": "Internal server error message"
+}
+`
     Here is the formatted `README.md` for your GitHub repository:
 
 ````markdown
