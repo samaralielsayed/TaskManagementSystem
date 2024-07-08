@@ -505,18 +505,6 @@ Display a skeleton loader while tasks are being fetched and displayed.
 - **Screenshot:**
   ![Loader](images/image-12.png)
 
-`````markdown
-# Database (SQL Server)
-
-## ERD
-
-![ERD](images/image-13.png)
-
-## Schema
-
-![Schema](images/image-14.png)
-
-````markdown
 # Database (SQL Server)
 
 ## ERD
@@ -531,19 +519,17 @@ Display a skeleton loader while tasks are being fetched and displayed.
 
 ### 1. Create the Database
 
-```sql
+````sql
 CREATE DATABASE Task;
 GO
-```
-````
-`````
+
 
 ### 2. Use the Database
 
 ```sql
 USE Task;
 GO
-```
+````
 
 ### 3. Create the Users Table
 
