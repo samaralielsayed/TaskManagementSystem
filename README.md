@@ -6,9 +6,9 @@
 
 ## Project Breakdown
 
-- **Backend**: 2
-- **Frontend**: 8
-- **Database (SQL Server)**: 15
+- **Backend**
+- **Frontend**
+- **Database (SQL Server)**
 
 ## Backend Setup
 
