@@ -410,11 +410,9 @@
     ```
   - **Server Error (500)**:
     `json
-{
-  "message": "Internal server error message"
-}
-`
-    Here is the formatted `README.md` for your GitHub repository:
+    {
+    "message": "Internal server error message"
+    }
 
 ````markdown
 # Project Name
@@ -433,8 +431,6 @@ npm install
 ```bash
 npm run start
 ```
-
-Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
 
 ## Pages
 
