@@ -26,7 +26,6 @@
 3. **.env File**:
    Create a `.env` file in the root directory of your project and add the following environment variables with your SQL database credentials:
 
-   ```
    PORT=8000
    SQL_USER=<your_sql_user>
    SQL_PASSWORD=<your_sql_password>
@@ -47,6 +46,7 @@
    ```
 
    **Note**: Replace `your_sql_user`, `your_sql_password`, `your_sql_server`, and `your_sql_database` with your actual SQL server configuration details.
+   ```
 
 ### 2. User Endpoints
 
@@ -510,6 +510,7 @@ Display a skeleton loader while tasks are being fetched and displayed.
 - **Screenshot:**
   ![Loader](images/image-12.png)
 
+````markdown
 # Database (SQL Server)
 
 ## ERD
@@ -519,10 +520,6 @@ Display a skeleton loader while tasks are being fetched and displayed.
 ## Schema
 
 ![Schema](images/image-14.png)
-
-`````
-
-This format organizes the content in a clear and structured way, making it easy for users to understand and navigate through the different sections of your project.
 
 ````markdown
 # Database (SQL Server)
@@ -535,15 +532,14 @@ This format organizes the content in a clear and structured way, making it easy 
 
 ![Schema](images/image-14.png)
 
-## SQL
+## SQL Scripts
 
 ### 1. Create the Database
 
 ```sql
 CREATE DATABASE Task;
 GO
-`````
-
+```
 ````
 
 ### 2. Use the Database
@@ -582,79 +578,78 @@ CREATE TABLE Tasks (
 );
 ```
 
-### 5. Write SQL Queries to Handle CRUD Operations
+### 5. SQL Queries
 
 #### 5.1 Tasks
 
-##### 5.1.1 Retrieve All Tasks for a User
+- **Retrieve All Tasks for a User**
 
-```sql
-SELECT * FROM Tasks WHERE userId = @userId;
-```
+  ```sql
+  SELECT * FROM Tasks WHERE userId = @userId;
+  ```
 
-##### 5.1.2 Retrieve a Single Task by ID for a User
+- **Retrieve a Single Task by ID for a User**
 
-```sql
-SELECT * FROM Tasks WHERE id = @id AND userId = @userId;
-```
+  ```sql
+  SELECT * FROM Tasks WHERE id = @id AND userId = @userId;
+  ```
 
-##### 5.1.3 Retrieve Tasks with Specific Status for a User
+- **Retrieve Tasks with Specific Status for a User**
 
-```sql
-SELECT * FROM Tasks WHERE status = @status AND userId = @userId;
-```
+  ```sql
+  SELECT * FROM Tasks WHERE status = @status AND userId = @userId;
+  ```
 
-##### 5.1.4 Create a New Task
+- **Create a New Task**
 
-```sql
-INSERT INTO Tasks (title, description, status, userId, created_at, updated_at)
-VALUES (@title, @description, @status, @userId, GETDATE(), GETDATE());
-```
+  ```sql
+  INSERT INTO Tasks (title, description, status, userId, created_at, updated_at)
+  VALUES (@title, @description, @status, @userId, GETDATE(), GETDATE());
+  ```
 
-##### 5.1.5 Update an Existing Task
+- **Update an Existing Task**
 
-```sql
-UPDATE Tasks
-SET title = @title, description = @description, status = @status, updated_at = GETDATE()
-WHERE id = @id AND userId = @userId;
-```
+  ```sql
+  UPDATE Tasks
+  SET title = @title, description = @description, status = @status, updated_at = GETDATE()
+  WHERE id = @id AND userId = @userId;
+  ```
 
-##### 5.1.6 Delete a Task
-
-```sql
-DELETE FROM Tasks WHERE id = @id AND userId = @userId;
-```
+- **Delete a Task**
+  ```sql
+  DELETE FROM Tasks WHERE id = @id AND userId = @userId;
+  ```
 
 #### 5.2 Users
 
-##### 5.2.1 Retrieve a User by ID
+- **Retrieve a User by ID**
 
-```sql
-SELECT * FROM Users WHERE id = @id;
+  ```sql
+  SELECT * FROM Users WHERE id = @id;
+  ```
+
+- **Retrieve a User by Email**
+
+  ```sql
+  SELECT * FROM Users WHERE email = @email;
+  ```
+
+- **Update a User**
+
+  ```sql
+  UPDATE Users
+  SET firstname = @firstname, lastname = @lastname, password = @password, phone = @phone, image = @image
+  WHERE id = @id;
+  ```
+
+- **Create a New User**
+  ```sql
+  INSERT INTO Users (firstname, lastname, email, password)
+  VALUES (@firstname, @lastname, @email, @password);
+  ```
+
 ```
 
-##### 5.2.2 Retrieve a User by Email
-
-```sql
-SELECT * FROM Users WHERE email = @email;
-```
-
-##### 5.2.3 Update a User
-
-```sql
-UPDATE Users
-SET firstname = @firstname, lastname = @lastname, password = @password, phone = @phone, image = @image
-WHERE id = @id;
-```
-
-##### 5.2.4 Create a New User
-
-```sql
-INSERT INTO Users (firstname, lastname, email, password)
-VALUES (@firstname, @lastname, @email, @password);
-```
-
-```
 
 ```
 ````
