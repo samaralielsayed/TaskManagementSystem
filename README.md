@@ -1,7 +1,5 @@
 # TaskManagementSystem
 
-# Task Management System
-
 **Author**: Samar Ali Elsayed
 
 ## Project Breakdown
