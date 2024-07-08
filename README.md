@@ -519,17 +519,17 @@ Display a skeleton loader while tasks are being fetched and displayed.
 
 ### 1. Create the Database
 
-````sql
+```sql
 CREATE DATABASE Task;
 GO
-
+```
 
 ### 2. Use the Database
 
 ```sql
 USE Task;
 GO
-````
+```
 
 ### 3. Create the Users Table
 
