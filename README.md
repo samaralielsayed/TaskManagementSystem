@@ -26,6 +26,7 @@
 3. **.env File**:
    Create a `.env` file in the root directory of your project and add the following environment variables with your SQL database credentials:
 
+   ```
    PORT=8000
    SQL_USER=<your_sql_user>
    SQL_PASSWORD=<your_sql_password>
@@ -46,7 +47,6 @@
    ```
 
    **Note**: Replace `your_sql_user`, `your_sql_password`, `your_sql_server`, and `your_sql_database` with your actual SQL server configuration details.
-   ```
 
 ### 2. User Endpoints
 
@@ -510,7 +510,7 @@ Display a skeleton loader while tasks are being fetched and displayed.
 - **Screenshot:**
   ![Loader](images/image-12.png)
 
-````markdown
+`````markdown
 # Database (SQL Server)
 
 ## ERD
@@ -541,6 +541,7 @@ CREATE DATABASE Task;
 GO
 ```
 ````
+`````
 
 ### 2. Use the Database
 
@@ -647,9 +648,3 @@ CREATE TABLE Tasks (
   INSERT INTO Users (firstname, lastname, email, password)
   VALUES (@firstname, @lastname, @email, @password);
   ```
-
-```
-
-
-```
-````
