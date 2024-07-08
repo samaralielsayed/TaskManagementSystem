@@ -414,17 +414,18 @@
     "message": "Internal server error message"
     }
 
-````markdown
 # Project Name
 
-## Set up Project
+## Setup Instructions
 
-### 1. Install Dependencies
+### Installing Dependencies
+
+To install project dependencies, run the following command:
 
 ```bash
 npm install
+
 ```
-````
 
 ### 2. Start the Server
 
