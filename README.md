@@ -46,6 +46,53 @@
 
    **Note**: Replace `your_sql_user`, `your_sql_password`, `your_sql_server`, and `your_sql_database` with your actual SQL server configuration details.
 
+## 1.4 Set Up SQL Server
+
+Open SQL Server and run the following queries:
+
+1. **Create the Database**
+
+   ```sql
+   CREATE DATABASE Task;
+   GO
+   ```
+
+2. **Use the Database**
+
+   ```sql
+   USE Task;
+   GO
+   ```
+
+3. **Create the Users Table**
+
+   ```sql
+   CREATE TABLE Users (
+       id INT PRIMARY KEY IDENTITY(1,1),
+       password VARCHAR(255) NOT NULL,
+       image VARCHAR(255) DEFAULT '1.jpg',
+       firstname VARCHAR(50) NOT NULL,
+       lastname VARCHAR(50) NOT NULL,
+       email VARCHAR(100) UNIQUE NOT NULL,
+       phone VARCHAR(20)
+   );
+   ```
+
+4. **Create the Tasks Table**
+
+   ```sql
+   CREATE TABLE Tasks (
+       id INT PRIMARY KEY IDENTITY(1,1),
+       title VARCHAR(255) NOT NULL,
+       description VARCHAR(255),
+       status VARCHAR(50) NOT NULL CHECK (status IN ('Pending', 'In Progress', 'Completed')),
+       userId INT,
+       FOREIGN KEY (userId) REFERENCES Users(id),
+       created_at DATETIME DEFAULT GETDATE(),
+       updated_at DATETIME DEFAULT GETDATE()
+   );
+   ```
+
 ### 2. User Endpoints
 
 #### 2.1 Postman Collection
