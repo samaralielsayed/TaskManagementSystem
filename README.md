@@ -17,10 +17,13 @@
    npm install
    ```
 2. **Start the Server**:
+
    ```sh
    npm start
    ```
+
    Server will be running at: `http://localhost:8000`
+
 3. **.env File**:
    Create a `.env` file in the root directory of your project and add the following environment variables with your SQL database credentials:
 
@@ -41,57 +44,56 @@
    FIREBASE_USER=<your_firebase_user>
    FIREBASE_AUTH=<your_firebase_auth>
    STRIPE_SECRET_KEY=<your_stripe_secret_key>
-
    ```
 
    **Note**: Replace `your_sql_user`, `your_sql_password`, `your_sql_server`, and `your_sql_database` with your actual SQL server configuration details.
 
-4. **Set Up SQL Server**
+### 2. Set Up SQL Server
 
 Open SQL Server and run the following queries:
 
-1. **Create the Database**
+#### 2.1 Create the Database
 
-   ```sql
-   CREATE DATABASE Task;
-   GO
-   ```
+```sql
+CREATE DATABASE Task;
+GO
+```
 
-2. **Use the Database**
+#### 2.2 Use the Database
 
-   ```sql
-   USE Task;
-   GO
-   ```
+```sql
+USE Task;
+GO
+```
 
-3. **Create the Users Table**
+#### 2.3 Create the Users Table
 
-   ```sql
-   CREATE TABLE Users (
-       id INT PRIMARY KEY IDENTITY(1,1),
-       password VARCHAR(255) NOT NULL,
-       image VARCHAR(255) DEFAULT '1.jpg',
-       firstname VARCHAR(50) NOT NULL,
-       lastname VARCHAR(50) NOT NULL,
-       email VARCHAR(100) UNIQUE NOT NULL,
-       phone VARCHAR(20)
-   );
-   ```
+```sql
+CREATE TABLE Users (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    password VARCHAR(255) NOT NULL,
+    image VARCHAR(255) DEFAULT '1.jpg',
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phone VARCHAR(20)
+);
+```
 
-4. **Create the Tasks Table**
+#### 2.4 Create the Tasks Table
 
-   ```sql
-   CREATE TABLE Tasks (
-       id INT PRIMARY KEY IDENTITY(1,1),
-       title VARCHAR(255) NOT NULL,
-       description VARCHAR(255),
-       status VARCHAR(50) NOT NULL CHECK (status IN ('Pending', 'In Progress', 'Completed')),
-       userId INT,
-       FOREIGN KEY (userId) REFERENCES Users(id),
-       created_at DATETIME DEFAULT GETDATE(),
-       updated_at DATETIME DEFAULT GETDATE()
-   );
-   ```
+```sql
+CREATE TABLE Tasks (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    title VARCHAR(255) NOT NULL,
+    description VARCHAR(255),
+    status VARCHAR(50) NOT NULL CHECK (status IN ('Pending', 'In Progress', 'Completed')),
+    userId INT,
+    FOREIGN KEY (userId) REFERENCES Users(id),
+    created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
+);
+```
 
 ### 2. User Endpoints
 
