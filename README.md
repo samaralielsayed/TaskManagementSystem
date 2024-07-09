@@ -95,13 +95,13 @@ CREATE TABLE Tasks (
 );
 ```
 
-### 2. User Endpoints
+### 3. User Endpoints
 
-#### 2.1 Postman Collection
+#### 3.1 Postman Collection
 
 - **Collection**: [Task Management API](https://crimson-comet-907136.postman.co/workspace/Team-Workspace~846ef1f1-6a55-4853-8d31-1aad198ad721/collection/22502337-6657a6f0-81db-4e2b-9d59-062cfc55c0b2?action=share&creator=22502337)
 
-#### 2.2 Register User
+#### 3.2 Register User
 
 - **Endpoint**: `http://localhost:8000/api/v1/users/register` (POST)
 - **Request Body**:
@@ -140,7 +140,7 @@ CREATE TABLE Tasks (
     }
     ```
 
-#### 2.3 Login User
+#### 3.3 Login User
 
 - **Endpoint**: `http://localhost:8000/api/v1/users/login` (POST)
 - **Request Body**:
@@ -182,9 +182,10 @@ CREATE TABLE Tasks (
       "message": "Internal server error message"
     }
     ```
-    **Note**: Token should be included in the header with key: `authorization` and value: `Bearer {token}`
 
-#### 2.4 Get User Profile
+**Note**: Token should be included in the header with key: `authorization` and value: `Bearer {token}`
+
+#### 3.4 Get User Profile
 
 - **Endpoint**: `http://localhost:8000/api/v1/users/userProfile` (GET)
 - **Middleware**: Authentication required (Token in header)
@@ -209,7 +210,7 @@ CREATE TABLE Tasks (
     }
     ```
 
-#### 2.5 Edit User Profile
+#### 3.5 Edit User Profile
 
 - **Endpoint**: `http://localhost:8000/api/v1/users/userProfile` (PUT)
 - **Middleware**: Authentication required (Token in header)
@@ -252,9 +253,9 @@ CREATE TABLE Tasks (
     }
     ```
 
-### 3. Task Endpoints
+### 4. Task Endpoints
 
-#### 3.1 Add Task to Logged-in User
+#### 4.1 Add Task to Logged-in User
 
 - **Endpoint**: `http://localhost:3000/api/v1/tasks` (POST)
 - **Middleware**: Authentication required (Token in header)
@@ -298,7 +299,7 @@ CREATE TABLE Tasks (
     }
     ```
 
-#### 3.2 Edit Task for Logged-in User
+#### 4.2 Edit Task for Logged-in User
 
 - **Endpoint**: `http://localhost:3000/api/v1/tasks/:idTask` (PUT)
 - **Middleware**: Authentication required (Token in header)
@@ -338,28 +339,26 @@ CREATE TABLE Tasks (
     }
     ```
 
-#### 3.3 Get Tasks for Logged-in User
+#### 4.3 Get Tasks for Logged-in User
 
-- **Endpoint**: `http://localhost:3000/api/v1/tasks` (GET)
+- **Endpoint**: `http://localhost:3000/api/v1/tasks` (
+
+GET)
+
 - **Middleware**: Authentication required (Token in header)
 - **Responses**:
   - **Success (200)**:
     ```json
     {
       "status": "success",
-      "data": [{TasksToThisUser}]
+      "results": numberOfTasks,
+      "data": {dataToNewTasks}
     }
     ```
   - **Authentication Error**:
     ```json
     {
       "message": "Unauthorized. Authentication token is missing or invalid"
-    }
-    ```
-  - **Not Found Tasks (404)**:
-    ```json
-    {
-      "message": "Tasks Not Found"
     }
     ```
   - **Server Error (500)**:
@@ -369,71 +368,7 @@ CREATE TABLE Tasks (
     }
     ```
 
-####
-
-3.4 Get Tasks By Status for Logged-in User
-
-- **Endpoint**: `http://localhost:3000/api/v1/tasks?status=status` (GET)
-- **Middleware**: Authentication required (Token in header)
-- **Responses**:
-  - **Success (200)**:
-    ```json
-    {
-      "status": "success",
-      "data": [{TasksToThisUser}]
-    }
-    ```
-  - **Authentication Error**:
-    ```json
-    {
-      "message": "Unauthorized. Authentication token is missing or invalid"
-    }
-    ```
-  - **Not Found Tasks (404)**:
-    ```json
-    {
-      "message": "Tasks Not Found"
-    }
-    ```
-  - **Server Error (500)**:
-    ```json
-    {
-      "message": "Internal server error message"
-    }
-    ```
-
-#### 3.5 Get Task for Logged-in User by Task ID
-
-- **Endpoint**: `http://localhost:3000/api/v1/tasks/:idTask` (GET)
-- **Middleware**: Authentication required (Token in header)
-- **Responses**:
-  - **Success (200)**:
-    ```json
-    {
-      "status": "success",
-      "data": {TaskToThisUser}
-    }
-    ```
-  - **Authentication Error**:
-    ```json
-    {
-      "message": "Unauthorized. Authentication token is missing or invalid"
-    }
-    ```
-  - **Not Found Task (404)**:
-    ```json
-    {
-      "message": "Task Not Found"
-    }
-    ```
-  - **Server Error (500)**:
-    ```json
-    {
-      "message": "Internal server error message"
-    }
-    ```
-
-#### 3.6 Delete Task for Logged-in User by Task ID
+#### 4.4 Delete Task for Logged-in User
 
 - **Endpoint**: `http://localhost:3000/api/v1/tasks/:idTask` (DELETE)
 - **Middleware**: Authentication required (Token in header)
@@ -451,17 +386,12 @@ CREATE TABLE Tasks (
       "message": "Unauthorized. Authentication token is missing or invalid"
     }
     ```
-  - **Not Found Task (404)**:
+  - **Server Error (500)**:
     ```json
     {
-      "message": "Task Not Found"
+      "message": "Internal server error message"
     }
     ```
-  - **Server Error (500)**:
-    `json
-    {
-    "message": "Internal server error message"
-    }
 
 # Project Name
 
