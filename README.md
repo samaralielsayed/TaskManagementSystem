@@ -46,7 +46,7 @@
 
    **Note**: Replace `your_sql_user`, `your_sql_password`, `your_sql_server`, and `your_sql_database` with your actual SQL server configuration details.
 
-## 1.4 Set Up SQL Server
+4. **Set Up SQL Server**
 
 Open SQL Server and run the following queries:
 
