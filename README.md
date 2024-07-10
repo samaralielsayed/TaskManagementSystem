@@ -99,7 +99,7 @@ CREATE TABLE Tasks (
 
 #### 3.1 Postman Collection
 
-- **Collection**: [Task Management API](https://crimson-comet-907136.postman.co/workspace/Team-Workspace~846ef1f1-6a55-4853-8d31-1aad198ad721/collection/22502337-6657a6f0-81db-4e2b-9d59-062cfc55c0b2?action=share&creator=22502337)
+- **Collection**: [Task Management API](https://documenter.getpostman.com/view/22502337/2sA3e49TzM)
 
 #### 3.2 Register User
 
